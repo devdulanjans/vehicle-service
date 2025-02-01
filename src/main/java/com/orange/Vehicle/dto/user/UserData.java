@@ -83,7 +83,6 @@ public class UserData {
                 ", password='" + password + '\'' +
                 ", provider='" + provider + '\'' +
                 ", name='" + name + '\'' +
-                ", role='" + role + '\'' +
-                '}';
+                ", role='" + role + '\'' + '}';
     }
 }
