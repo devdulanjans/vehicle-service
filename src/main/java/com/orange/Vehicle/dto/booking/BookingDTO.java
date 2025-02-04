@@ -9,12 +9,12 @@ public class BookingDTO {
     private String userId;
     private String serviceStationId;
     private String serviceDetails;
-    private LocalDateTime appointmentDate;
+    private String appointmentDate;
     private String status; // Pending, Confirmed, Cancelled
 
     public BookingDTO(){}
 
-    public BookingDTO(String id, String userId, String serviceStationId, String serviceDetails, LocalDateTime appointmentDate, String status) {
+    public BookingDTO(String id, String userId, String serviceStationId, String serviceDetails, String appointmentDate, String status) {
         this.id = id;
         this.userId = userId;
         this.serviceStationId = serviceStationId;
@@ -39,7 +39,7 @@ public class BookingDTO {
         return serviceDetails;
     }
 
-    public LocalDateTime getAppointmentDate() {
+    public String getAppointmentDate() {
         return appointmentDate;
     }
 
@@ -63,7 +63,7 @@ public class BookingDTO {
         this.serviceDetails = serviceDetails;
     }
 
-    public void setAppointmentDate(LocalDateTime appointmentDate) {
+    public void setAppointmentDate(String appointmentDate) {
         this.appointmentDate = appointmentDate;
     }
 
