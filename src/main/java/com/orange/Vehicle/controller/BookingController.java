@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.sql.SQLOutput;
 
 @RestController
-@RequestMapping("/api/v1/booking")
+@RequestMapping("/v1/booking")
 @CrossOrigin
 public class BookingController {
 
