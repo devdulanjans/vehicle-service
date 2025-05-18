@@ -55,4 +55,15 @@ public class ServiceStationServiceImpl implements ServiceStationService {
         responseDTO.setContent(serviceStationName);
         return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
     }
+
+    @Override
+    public ResponseEntity<ResponseDTO> deleteServiceStation(String id, ServiceStation serviceStation) {
+        serviceStation.setId(id);
+        serviceStation.setStatus("deactivated");
+        ServiceStation response = serviceStationRepository.save(serviceStation);
+        responseDTO.setCode("200");
+        responseDTO.setMessage("All service station data");
+        responseDTO.setContent(response);
+        return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
+    }
 }

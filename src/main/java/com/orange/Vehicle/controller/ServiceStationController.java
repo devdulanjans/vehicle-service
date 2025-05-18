@@ -28,4 +28,14 @@ public class ServiceStationController {
     public ResponseEntity serviceStationFind(@RequestParam String name){
         return serviceStationService.getSearchName(name);
     }
+
+    @GetMapping("/stationName/{id}")
+    public ResponseEntity serviceStationFindByName(@PathVariable String id){
+        return serviceStationService.getSearchName(id);
+    }
+
+    @PutMapping("/deleteStation/{id}")
+    public ResponseEntity updateStation(@PathVariable String id,@RequestBody ServiceStation serviceStation){
+        return serviceStationService.deleteServiceStation(id,serviceStation);
+    }
 }

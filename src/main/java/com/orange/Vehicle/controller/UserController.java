@@ -18,6 +18,7 @@ public class UserController {
 
     @PostMapping("/signUp")
     public ResponseEntity<ResponseDTO> signUp(@RequestBody UserData user){
+        System.out.println("Calling This");
         return userService.signUp(user);
     }
 
