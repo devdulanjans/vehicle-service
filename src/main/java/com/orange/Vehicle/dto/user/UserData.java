@@ -4,6 +4,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "userData")
 public class UserData {
+    private String id;
     private String email;
     private String phoneNumber;
     private String password;
@@ -16,7 +17,7 @@ public class UserData {
     }
 
     // Parameterized Constructor
-    public UserData(String email, String phoneNumber, String password, String provider, String name, String role) {
+    public UserData(String id, String email, String phoneNumber, String password, String provider, String name, String role) {
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.password = password;
@@ -62,8 +63,29 @@ public class UserData {
         return name;
     }
 
+    @Override
+    public String toString() {
+        return "UserData{" +
+                "id='" + id + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", password='" + password + '\'' +
+                ", provider='" + provider + '\'' +
+                ", name='" + name + '\'' +
+                ", role='" + role + '\'' +
+                '}';
+    }
+
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public String getRole() {
@@ -74,15 +96,4 @@ public class UserData {
         this.role = role;
     }
 
-    // toString method
-    @Override
-    public String toString() {
-        return "UserData{" +
-                "email='" + email + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                ", password='" + password + '\'' +
-                ", provider='" + provider + '\'' +
-                ", name='" + name + '\'' +
-                ", role='" + role + '\'' + '}';
-    }
 }
