@@ -9,6 +9,7 @@ public class ServiceStation {
     @Id
     private String id;
 
+    private String category;
     private String name;
     private String address;
     private Contact contact;
@@ -24,10 +25,9 @@ public class ServiceStation {
     private String status;
     private Capacity capacity;
 
-    public ServiceStation(){}
-
-    public ServiceStation(String id, String name, String address, Contact contact, Location location, List<ServiceItem> servicesOffered, Registration registration, Profile profile, Facilities facilities, Reviews reviews, List<Promotion> promotions, Team team, String ownerId, String status, Capacity capacity) {
+    public ServiceStation(String id, String category, String name, String address, Contact contact, Location location, List<ServiceItem> servicesOffered, Registration registration, Profile profile, Facilities facilities, Reviews reviews, List<Promotion> promotions, Team team, String ownerId, String status, Capacity capacity) {
         this.id = id;
+        this.category = category;
         this.name = name;
         this.address = address;
         this.contact = contact;
@@ -50,6 +50,14 @@ public class ServiceStation {
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 
     public String getName() {
@@ -168,6 +176,7 @@ public class ServiceStation {
     public String toString() {
         return "ServiceStation{" +
                 "id='" + id + '\'' +
+                ", category='" + category + '\'' +
                 ", name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", contact=" + contact +
