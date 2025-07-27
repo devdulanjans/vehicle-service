@@ -12,4 +12,7 @@ public interface ServiceStationRepository extends MongoRepository<ServiceStation
 
     @Query("{'name': { $regex: '^?0', $options: 'i' }}") // Case-insensitive search
     List<ServiceStation> findByNameStartingWith(String prefix);
+
+    @Query("{'category': ?0}")
+    List<ServiceStation> findByCategory(String category);
 }
