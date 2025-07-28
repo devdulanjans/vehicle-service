@@ -66,6 +66,16 @@ public class ServiceStationServiceImpl implements ServiceStationService {
     }
 
     @Override
+    public ResponseEntity<ResponseDTO> getSearchCategoryAndName(String category, String name) {
+        List<ServiceStation> serviceStationName = serviceStationRepository.findByCategoryAndName(category, name);
+        responseDTO.setCode("200");
+        responseDTO.setMessage("All service station data");
+        responseDTO.setContent(serviceStationName);
+        return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
+    }
+
+
+    @Override
     public ResponseEntity<ResponseDTO> deleteServiceStation(String id, ServiceStation serviceStation) {
         serviceStation.setId(id);
         serviceStation.setStatus("deactivated");
