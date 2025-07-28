@@ -39,6 +39,11 @@ public class ServiceStationController {
         return serviceStationService.getSearchCategory(category);
     }
 
+    @GetMapping("/getServiceByCategoryAndName/{category}/{name}")
+    public ResponseEntity getServiceByCategoryAndName(@PathVariable String category, @PathVariable String name){
+        return serviceStationService.getSearchCategoryAndName(category, name);
+    }
+
     @PutMapping("/deleteStation/{id}")
     public ResponseEntity updateStation(@PathVariable String id,@RequestBody ServiceStation serviceStation){
         return serviceStationService.deleteServiceStation(id,serviceStation);
