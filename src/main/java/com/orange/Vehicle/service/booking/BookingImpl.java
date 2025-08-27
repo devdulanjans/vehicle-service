@@ -34,4 +34,15 @@ public class BookingImpl implements Booking{
         responseDTO.setContent(response);
         return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
     }
+
+    @Override
+    public ResponseEntity<ResponseDTO> getUserAllServiceHistoryByUser(String userId) {
+        List<BookingDTO> response = bookingRepo.findByUserId(userId);
+        responseDTO.setCode("200");
+        responseDTO.setMessage("Successfully fetched the data");
+        responseDTO.setContent(response);
+        return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
+    }
+
+
 }
