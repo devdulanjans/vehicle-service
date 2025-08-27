@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.sql.SQLOutput;
+import java.util.List;
 
 @RestController
 @RequestMapping("/v1/booking")
@@ -26,6 +27,11 @@ public class BookingController {
     @GetMapping("/getUserAllServiceHistory")
     public ResponseEntity<ResponseDTO> getUserAllServiceHistory(){
         return booking.getUserAllServiceHistory();
+    }
+
+    @GetMapping("/getBookingsByUserId/{userId}")
+    public ResponseEntity<ResponseDTO> getBookingsByUserId(@PathVariable String userId) {
+        return booking.getUserAllServiceHistoryByUser(userId);
     }
 
 }

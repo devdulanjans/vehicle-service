@@ -7,4 +7,5 @@ import org.springframework.http.ResponseEntity;
 public interface Booking {
     ResponseEntity<ResponseDTO> booking(BookingDTO booking);
     ResponseEntity<ResponseDTO> getUserAllServiceHistory();
+    ResponseEntity<ResponseDTO> getUserAllServiceHistoryByUser(String userId);
 }
