@@ -85,4 +85,13 @@ public class ServiceStationServiceImpl implements ServiceStationService {
         responseDTO.setContent(response);
         return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
     }
+
+    @Override
+    public ResponseEntity<ResponseDTO> getStationsByOwnerId(String ownerId) {
+        List<ServiceStation> stations = serviceStationRepository.findByOwnerId(ownerId);
+        responseDTO.setCode("200");
+        responseDTO.setMessage("Service stations for the given ownerId");
+        responseDTO.setContent(stations);
+        return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
+    }
 }
