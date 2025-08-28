@@ -12,4 +12,5 @@ public interface ServiceStationService {
     ResponseEntity<ResponseDTO> getSearchCategoryAndName(String category, String name);
     ResponseEntity<ResponseDTO> deleteServiceStation(String id, ServiceStation serviceStation);
     ResponseEntity<ResponseDTO> getStationsByOwnerId(String ownerId);
+    ResponseEntity<ResponseDTO> updateServiceStation(String id, ServiceStation updatedStation);
 }

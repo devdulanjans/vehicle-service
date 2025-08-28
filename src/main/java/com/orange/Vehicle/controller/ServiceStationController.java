@@ -53,4 +53,11 @@ public class ServiceStationController {
     public ResponseEntity getStationsByOwnerId(@PathVariable String ownerId) {
         return serviceStationService.getStationsByOwnerId(ownerId);
     }
+
+    @PutMapping("/updateStation/{id}")
+    public ResponseEntity updateServiceStation(@PathVariable String id, @RequestBody ServiceStation serviceStation) {
+        System.out.println("serviceStation: "+serviceStation);
+        System.out.println("serviceStation: "+id);
+        return serviceStationService.updateServiceStation(id, serviceStation);
+    }
 }
