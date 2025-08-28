@@ -48,4 +48,9 @@ public class ServiceStationController {
     public ResponseEntity updateStation(@PathVariable String id,@RequestBody ServiceStation serviceStation){
         return serviceStationService.deleteServiceStation(id,serviceStation);
     }
+
+    @GetMapping("/getStationsByOwnerId/{ownerId}")
+    public ResponseEntity getStationsByOwnerId(@PathVariable String ownerId) {
+        return serviceStationService.getStationsByOwnerId(ownerId);
+    }
 }
