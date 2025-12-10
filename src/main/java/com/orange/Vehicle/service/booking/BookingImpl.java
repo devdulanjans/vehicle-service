@@ -44,5 +44,14 @@ public class BookingImpl implements Booking{
         return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
     }
 
+    @Override
+    public ResponseEntity<ResponseDTO> getAllBookings() {
+        List<BookingDTO> response = bookingRepo.findAll();
+        responseDTO.setCode("200");
+        responseDTO.setMessage("Successfully fetched the data");
+        responseDTO.setContent(response);
+        return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
+    }
+
 
 }

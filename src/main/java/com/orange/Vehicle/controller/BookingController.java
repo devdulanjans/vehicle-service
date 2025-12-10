@@ -34,4 +34,9 @@ public class BookingController {
         return booking.getUserAllServiceHistoryByUser(userId);
     }
 
+    @GetMapping("/getAllBooking")
+    public ResponseEntity<ResponseDTO> getAllBooking(){
+        return booking.getAllBookings();
+    }
+
 }
