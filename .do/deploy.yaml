@@ -1,0 +1,9 @@
+services:
+  - name: vehicle-service
+    github:
+      branch: main
+      repo: devdulanjans/vehicle-service
+    build_command: "mvn clean package"
+    run_command: "java -jar target/*.jar"
+    environment_slug: java
+    http_port: 8080

@@ -7,8 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.sql.SQLOutput;
+import java.util.List;
+
 @RestController
-@RequestMapping("/api/v1/booking")
+@RequestMapping("/v1/booking")
+@CrossOrigin
 public class BookingController {
 
     @Autowired
@@ -16,12 +20,23 @@ public class BookingController {
 
     @PostMapping("/booking")
     public ResponseEntity<ResponseDTO> booking(@RequestBody BookingDTO bookingDTO){
+        System.out.println(bookingDTO);
         return booking.booking(bookingDTO);
     }
 
     @GetMapping("/getUserAllServiceHistory")
     public ResponseEntity<ResponseDTO> getUserAllServiceHistory(){
         return booking.getUserAllServiceHistory();
+    }
+
+    @GetMapping("/getBookingsByUserId/{userId}")
+    public ResponseEntity<ResponseDTO> getBookingsByUserId(@PathVariable String userId) {
+        return booking.getUserAllServiceHistoryByUser(userId);
+    }
+
+    @GetMapping("/getAllBooking")
+    public ResponseEntity<ResponseDTO> getAllBooking(){
+        return booking.getAllBookings();
     }
 
 }

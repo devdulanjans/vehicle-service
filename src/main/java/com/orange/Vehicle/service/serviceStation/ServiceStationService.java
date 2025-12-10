@@ -8,4 +8,9 @@ public interface ServiceStationService {
     ResponseEntity<ResponseDTO> registerStation(ServiceStation serviceStation);
     ResponseEntity<ResponseDTO> getAllData();
     ResponseEntity<ResponseDTO> getSearchName(String stationName);
+    ResponseEntity<ResponseDTO> getSearchCategory(String category);
+    ResponseEntity<ResponseDTO> getSearchCategoryAndName(String category, String name);
+    ResponseEntity<ResponseDTO> deleteServiceStation(String id, ServiceStation serviceStation);
+    ResponseEntity<ResponseDTO> getStationsByOwnerId(String ownerId);
+    ResponseEntity<ResponseDTO> updateServiceStation(String id, ServiceStation updatedStation);
 }
