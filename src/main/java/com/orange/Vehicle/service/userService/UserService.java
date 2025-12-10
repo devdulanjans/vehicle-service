@@ -8,4 +8,5 @@ import org.springframework.http.ResponseEntity;
 public interface UserService {
     ResponseEntity<ResponseDTO> signUp(UserData user);
     ResponseEntity<ResponseDTO> login(LoginRequestDTO credentials);
+    ResponseEntity<ResponseDTO> getAllUsers();
 }

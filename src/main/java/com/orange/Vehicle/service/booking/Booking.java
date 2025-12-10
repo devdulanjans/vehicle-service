@@ -8,4 +8,5 @@ public interface Booking {
     ResponseEntity<ResponseDTO> booking(BookingDTO booking);
     ResponseEntity<ResponseDTO> getUserAllServiceHistory();
     ResponseEntity<ResponseDTO> getUserAllServiceHistoryByUser(String userId);
+    ResponseEntity<ResponseDTO> getAllBookings();
 }

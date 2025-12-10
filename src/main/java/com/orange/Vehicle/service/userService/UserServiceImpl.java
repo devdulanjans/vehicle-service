@@ -9,6 +9,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -83,6 +84,22 @@ public class UserServiceImpl implements UserService {
             return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
         }
 
+    }
+
+    @Override
+    public ResponseEntity<ResponseDTO> getAllUsers() {
+        try {
+            Iterable<UserData> users = userRepository.findAll();
+            responseDTO.setCode("200");
+            responseDTO.setMessage("Successfully fetched all users");
+            responseDTO.setContent(users);
+            return new ResponseEntity<>(responseDTO, HttpStatus.ACCEPTED);
+        } catch (Exception e) {
+            responseDTO.setCode("500");
+            responseDTO.setMessage("Internal Server Error: " + e.getMessage());
+            responseDTO.setContent(null);
+            return new ResponseEntity<>(responseDTO, HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
 }
